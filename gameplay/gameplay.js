@@ -53,9 +53,21 @@ var dare = ["Give your opponent a lap dance for 30 seconds.",
 //make so that it won't repeat twice:
 
 $('#buttonTruth').on('click', function(){
-	randomTruth = truth[Math.floor(Math.random()*truth.length)];
-
+	var pickedNumber = Math.floor(Math.random() * truth.length);
+	randomTruth = truth[pickedNumber];
 	console.log(randomTruth);
+
+	truth.splice(pickedNumber, 1);
+});
+
+//Do the same for Dare:
+
+$('#buttonDare').on('click', function(){
+	var pickedNumber = Math.floor(Math.random() * dare.length);
+	randomDare = dare[pickedNumber];
+	console.log(randomDare);
+
+	dare.splice(pickedNumber, 1);
 });
 
 
