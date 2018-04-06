@@ -1,32 +1,59 @@
 // alert ("you are sane!");
 
-//create const for runner 1 & 2:
+//on click of button: 
 
-// let runner1 = $('#runner1');
-// let runner2 = $('#runner2');
 
-// // create a button click function:
+let runner1 = $('#runner1');
+let runner2 = $('#runner2');
 
-// let addMargin1 = 0;
 
-// $('#button1').on('click', function(){
-// 	addMargin1 += 100;
-// //add addMargin to runner1's left margin in CSS:
-// 	$('#runner1').css('margin-left', addMargin1 + ("px"));
-// 	if(addMargin1 >= 1300) {
-// 		alert("You done be drunk, runner 1!");
-// 	}
-// });
 
-// let addMargin2 = 0;
-// $('#button2').on('click', function(){
-// 	addMargin2 += 100;
-// //add addMargin to runner2's left margin in CSS:
-// 	$('#runner2').css('margin-left', addMargin2 + ("px"));
-// 	if(addMargin2 >= 1300) {
-// 		alert("You done be drunk, runner 2!");
-// 	}
-// });
+// create a button click function:
+
+let addMargin1 = 0;
+
+$('#button1').on('click', function(){
+	addMargin1 += 100;
+//add addMargin to runner1's left margin in CSS:
+	$('#runner1').css('margin-left', addMargin1 + ("px"));
+	if(addMargin1 >= 1300) {
+		alert("You done be drunk, runner 1!");
+	}
+
+});
+
+// create if statement so that when it's true then runner 2 can go: <= Not sure if necessary
+// (Another way: using Jquery's .hasClass(), .addClass, or .removeClass) Will look into this if there's time.
+
+
+//Create an alert that prompt's it's the other player's turn:
+$('#runner1Completed').on('click', function() {
+		alert("It's Player 2\'s turn.");
+});
+
+$('#runner1Failed').on('click', function() {
+		alert("It's Player 2\'s turn.");
+});
+
+
+let addMargin2 = 0;
+$('#button2').on('click', function(){
+	addMargin2 += 100;
+//add addMargin to runner2's left margin in CSS:
+	$('#runner2').css('margin-left', addMargin2 + ("px"));
+	if(addMargin2 >= 1300) {
+		alert("You done be drunk, runner 2!");
+	}
+});
+
+$('#runner2Completed').on('click', function() {
+		alert("It's Player 1\'s turn.");
+});
+
+$('#runner2Failed').on('click', function() {
+		alert("It's Player 1\'s turn.");
+});
+
 
 //Create truth and Dare arrays
 
