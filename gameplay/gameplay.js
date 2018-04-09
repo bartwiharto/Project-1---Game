@@ -5,25 +5,6 @@
 // // create if statement so that when it's true then runner 2 can go: <= Not sure if necessary
 // // (Another way: using Jquery's .hasClass(), .addClass, or .removeClass) Will look into this if there's time.
 
-
-// //Create an alert that prompt's it's the other player's turn:
-// $('#runner1Completed').on('click', function() {
-// 		alert("It's Player 2\'s turn.");
-// });
-
-// $('#runner1Failed').on('click', function() {
-// 		alert("It's Player 2\'s turn.");
-// });
-
-// $('#runner2Completed').on('click', function() {
-// 		alert("It's Player 1\'s turn.");
-// });
-
-// $('#runner2Failed').on('click', function() {
-// 		alert("It's Player 1\'s turn.");
-// });
-
-
 // Create truth and Dare arrays
 
 var truth = ["Have you ever had a threesome?", 
@@ -62,7 +43,7 @@ span.onclick = function() {
 
 
 //function for ASK ME button
-function changeQuestionTruth(){
+function changeQuestionTruth1(){
 	
 	//picking random number:
 	var pickedNumber = Math.floor(Math.random() * truth.length);
@@ -78,7 +59,7 @@ function changeQuestionTruth(){
 }
 
 //Function for DARE ME button
-function changeQuestionDare(){
+function changeQuestionDare1(){
 
 
 	//picking random number
@@ -101,21 +82,40 @@ $('#runner1Completed').on('click', function(){
 	addMargin1 += 100;
 //add addMargin to runner1's left margin in CSS:
 	$('#runner1').css('margin-left', addMargin1 + ("px"));
+		
 	if(addMargin1 >= 1300) {
-		alert("You done be drunk, runner 1!");
+		alert("You done be drunk, runner 2!");
+	} else {
+		alert("Congrats! You advance a step. Now, it\'s Player 2\'s turn");
 	}
+
+	$('#myModal').hide();
 
 });
 
-$('#runner1Failed').on('click', function(){
-//add addMargin to runner1's left margin in CSS:
+//
 
+$('#runner1Failed').on('click', function(){
+
+//img stays in place if addMargin = 0
 	if(addMargin1 === 0) {
 		$('#runner1').css('margin-left', 0 + ("px"));
 	} else {
+
+//subtract addMargin from runner1's left margin in CSS:
+
 		addMargin1 -= 100;
 		$('#runner1').css('margin-left', addMargin1 + ("px"));
 	}
+
+	if (addMargin1 == 0) {
+		alert("You don't advance. Now, it\'s Player 1\'s turn");
+	} else if (addMargin1 >= 10) {
+		alert("You move back a step. Now it\'s Player 1\'s turn");
+	}
+
+	$('#myModal').hide();
+
 });
 
 
@@ -182,19 +182,36 @@ $('#runner2Completed').on('click', function(){
 	$('#runner2').css('margin-left', addMargin2 + ("px"));
 	if(addMargin2 >= 1300) {
 		alert("You done be drunk, runner 2!");
+	} else {
+		alert("Congrats! You advance a step. Now, it\'s Player 1\'s turn");
 	}
+
+	$('#myModal2').hide();
 });
 
 $('#runner2Failed').on('click', function(){
-//add addMargin to runner1's left margin in CSS:
+
+//img stays in place if addMargin = 0
 
 	if(addMargin2 === 0) {
 		$('#runner2').css('margin-left', 0 + ("px"));
 	} else {
+
+//subtract addMargin from runner2's left margin in CSS:
 		addMargin2 -= 100;
 		$('#runner2').css('margin-left', addMargin2 + ("px"));
 	}
+
+	if (addMargin2 === 0) {
+		alert("You don't advance. Now, it\'s Player 1\'s turn");
+	} else if (addMargin2 >= 10) {
+		alert("You move back a step. Now it\'s Player 1\'s turn");
+	}
+
+	$('#myModal2').hide();
+
 });
+
 
 
 

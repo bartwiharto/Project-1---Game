@@ -1,3 +1,9 @@
+
+body{
+	background-size: 1450px 830px;
+	background-repeat: no-repeat;
+}
+
 h1 {
 	color: red;
 }
@@ -88,10 +94,6 @@ img {
     color: black;
 }
 
-body{
-	background-width: 1000px;
-	background-height: 800px;
-}
 
 
 
