@@ -89,7 +89,9 @@ $('#runner1Completed').on('click', function(){
 		alert("Congrats! You advance a step. Now, it\'s Player 2\'s turn");
 	}
 
-	$('#myModal').hide();
+	$('#questionContent').text("Choose Truth or Dare:");
+
+	$('#myModal').slideUp(800);
 
 });
 
@@ -114,7 +116,9 @@ $('#runner1Failed').on('click', function(){
 		alert("You move back a step. Now it\'s Player 1\'s turn");
 	}
 
-	$('#myModal').hide();
+	$('#questionContent').text("Choose Truth or Dare:");
+
+	$('#myModal').slideUp(800);
 
 });
 
@@ -186,7 +190,9 @@ $('#runner2Completed').on('click', function(){
 		alert("Congrats! You advance a step. Now, it\'s Player 1\'s turn");
 	}
 
-	$('#myModal2').hide();
+	$('#questionContent2').text("Choose Truth or Dare:");
+
+	$('#myModal2').slideUp(800);
 });
 
 $('#runner2Failed').on('click', function(){
@@ -208,7 +214,9 @@ $('#runner2Failed').on('click', function(){
 		alert("You move back a step. Now it\'s Player 1\'s turn");
 	}
 
-	$('#myModal2').hide();
+	$('#questionContent2').text("Choose Truth or Dare:");
+
+	$('#myModal2').slideUp(800);
 
 });
 
