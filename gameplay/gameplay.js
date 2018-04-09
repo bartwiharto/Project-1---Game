@@ -69,34 +69,6 @@ var dare = ["Give your opponent a lap dance for 30 seconds.",
 			"Sing a song from the 80\'s or 90\'s very loudly.",
 			"Dance hardcore without music for 1 minute."];
 
-//create function to generate random numbers:
-
-//Math.random generates random number from 0 up to but not including 1. if we mulitply by 6, then it will generate 0 up to but not including 6.
-//Math.ceil(Math.random() * (truth.length));
-
-
-//create loop function that can randomly generate questions: DONE
-//make so that function above works when a button is clicked: DONE
-//make so that it won't repeat twice:
-
-// $('#buttonTruth').on('click', function(){
-// 	var pickedNumber = Math.floor(Math.random() * truth.length);
-// 	randomTruth = truth[pickedNumber];
-// 	console.log(randomTruth);
-
-// 	truth.splice(pickedNumber, 1);
-// });
-
-// //Do the same for Dare:
-
-// $('#buttonDare').on('click', function(){
-// 	var pickedNumber = Math.floor(Math.random() * dare.length);
-// 	randomDare = dare[pickedNumber];
-// 	console.log(randomDare);
-
-// 	dare.splice(pickedNumber, 1);
-// });
-
 
 //Modal for player 1:
 
@@ -105,32 +77,6 @@ var modal = document.getElementById('myModal');
 
 // Get the button that opens the modal
 var btn = document.getElementById("button1");
-
-
-function changeQuestionTruth(){
-	
-	var pickedNumber = Math.floor(Math.random() * truth.length);
-
-	randomTruth = truth[pickedNumber];
-
-	$('#questionContent').append("<br><br>" + randomTruth);
-
-	truth.splice(pickedNumber, 1);
-}
-
-function changeQuestionDare(){
-
-
-	//picking random number
-	var pickedNumber = Math.floor(Math.random() * dare.length);
-	//use random number to get item from dare array
-	randomDare = dare[pickedNumber];
-	//appending to modal body
-	$('#questionContent').append("<br><br>" + randomDare);
-
-	//taking out the index number thats already played
-	dare.splice(pickedNumber, 1);
-}
 
 //Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
@@ -146,49 +92,118 @@ span.onclick = function() {
 }
 
 
+//function for ASK ME button
+function changeQuestionTruth(){
+	
+	//picking random number:
+	var pickedNumber = Math.floor(Math.random() * truth.length);
+
+	//use random number to get item from truth array
+	randomTruth = truth[pickedNumber];
+
+	//appending to modal body
+	$('#questionContent').append("<br><br>" + randomTruth);
+
+	//taking out the index # that's already been played.
+	truth.splice(pickedNumber, 1);
+}
+
+//Function for DARE ME button
+function changeQuestionDare(){
 
 
+	//picking random number
+	var pickedNumber = Math.floor(Math.random() * dare.length);
+	//use random number to get item from dare array
+	randomDare = dare[pickedNumber];
+	//appending to modal body
+	$('#questionContent').append("<br><br>" + randomDare);
+
+	//taking out the index number thats already played
+	dare.splice(pickedNumber, 1);
+}
 
 
+// create a button click function for COMPLETED task:
+
+let addMargin1 = 0;
+
+$('#runner1Completed').on('click', function(){
+	addMargin1 += 100;
+//add addMargin to runner1's left margin in CSS:
+	$('#runner1').css('margin-left', addMargin1 + ("px"));
+	if(addMargin1 >= 1300) {
+		alert("You done be drunk, runner 1!");
+	}
+
+});
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+//Modal for player 2:
 
 // Get the modal
-var modal = document.getElementById('myModal');
+var modal2 = document.getElementById('myModal2');
 
 // Get the button that opens the modal
-var btn = document.getElementById("button2");
+var btn2 = document.getElementById("button2");
 
 // Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+var span2 = document.getElementById("close2");
 
 // When the user clicks the button, open the modal 
-btn.onclick = function() {
-    modal.style.display = "block";
+btn2.onclick = function() {
+    modal2.style.display = "block";
 }
 
 // When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-    modal.style.display = "none";
+span2.onclick = function() {
+    modal2.style.display = "none";
 }
 
+//function for ASK ME button
+function changeQuestionTruth(){
+	
+	//picking random number:
+	var pickedNumber = Math.floor(Math.random() * truth.length);
+
+	//use random number to get item from truth array
+	randomTruth = truth[pickedNumber];
+
+	//appending to modal body
+	$('#questionContent2').append("<br><br>" + randomTruth);
+
+	//taking out the index # that's already been played.
+	truth.splice(pickedNumber, 1);
+}
+
+//Function for DARE ME button
+function changeQuestionDare(){
 
 
+	//picking random number
+	var pickedNumber = Math.floor(Math.random() * dare.length);
+	//use random number to get item from dare array
+	randomDare = dare[pickedNumber];
+	//appending to modal body
+	$('#questionContent2').append("<br><br>" + randomDare);
 
+	//taking out the index number thats already played
+	dare.splice(pickedNumber, 1);
+}
 
+// create button click function for COMPLETED task:
+
+let addMargin2 = 0;
+
+$('#runner2Completed').on('click', function(){
+	addMargin2 += 100;
+
+//add addMargin to runner2's left margin in CSS:
+	$('#runner2').css('margin-left', addMargin2 + ("px"));
+	if(addMargin2 >= 1300) {
+		alert("You done be drunk, runner 2!");
+	}
+});
 
 
 
